@@ -1,17 +1,16 @@
 import { StyleSheet, TextInput, View } from "react-native";
-import Button from "./Button";
+import Button from "./common/Button";
 import theme from "../theme";
 
 const styles = StyleSheet.create({
   formView:{
-    flexDirection:"row",
     backgroundColor: theme.colors.white,
     alignItems:"center",
     justifyContent:"space-between",
     width:"100%",
     paddingHorizontal: 20,
     paddingVertical: 15,
-    gap: 20,
+    gap: 15,
   },
   inputStyle:{
     backgroundColor: theme.colors.bgMain,
@@ -19,16 +18,27 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: theme.roundness,
     padding: 10,
-    width: "100%",
+    width: '80%',
   },
+  btnWrapper: {
+    flexDirection: 'row',
+    justifyContent:"space-around",
+    width: '100%'
+  },
+  cancelBtn: {
+    backgroundColor: theme.colors.error
+  }
 });
 
-const FormView = ({onStudentInput, onAddStudent}) => {
+const FormView = ({onStudentInput, onAddStudent, onCancel}) => {
  return (
   <View style={styles.formView}>
     <TextInput style={styles.inputStyle} placeholder="New student name..." 
         onChangeText={onStudentInput}/>
-    <Button onPress={onAddStudent}>Add</Button>
+    <View style={styles.btnWrapper}>
+      <Button onPress={onCancel} style={styles.cancelBtn}>Cancel</Button>
+      <Button onPress={onAddStudent}>Add</Button>
+    </View>
   </View>
  )
 }

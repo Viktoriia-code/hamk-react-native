@@ -1,6 +1,9 @@
 import { StyleSheet, View } from "react-native";
 import theme from "../theme";
 import Students from "./Students";
+import Lessons from "./Lessons";
+import SingleLesson from "./SingleLesson";
+import SingleStudent from "./SingleStudent";
 import AppBar from "./AppBar";
 import { Route, Routes } from 'react-router-native';
 
@@ -17,7 +20,10 @@ const Main = () => {
     <View style={styles.container}>
       <AppBar />
       <Routes>
-        <Route path="/" element={<Students />} />
+        <Route path="/" element={<Lessons />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/lessons/:id" element={<SingleLesson />} exact />
+        <Route path="/students/:id" element={<SingleStudent />} exact />
       </Routes>
     </View>
     );

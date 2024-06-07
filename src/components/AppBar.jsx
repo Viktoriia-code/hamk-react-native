@@ -24,15 +24,16 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  console.log(Constants);
   const navigate = useNavigate();
 
   return (
     <View style={styles.container}>
       <ScrollView horizontal contentContainerStyle={styles.scroll}>
         <Link to="/" style={styles.tab}>
-          <Text style={styles.text}>Groups</Text>
+          <Text style={styles.text}>Lessons</Text>
         </Link>
-        <Link to="/" style={styles.tab}>
+        <Link to="/students" style={styles.tab}>
           <Text style={styles.text}>Students</Text>
         </Link>
       </ScrollView>

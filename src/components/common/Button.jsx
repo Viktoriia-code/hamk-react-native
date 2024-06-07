@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 
-import theme from '../theme';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.white,
+    fontWeight: theme.fontWeights.bold,
+    fontSize: theme.fontSizes.subheading,
   },
 });
 
